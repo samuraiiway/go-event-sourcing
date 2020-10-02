@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	AGGREGATION_CHANNEL_SIZE = 1000
+	AGGREGATION_CHANNEL_SIZE = 100000
 )
 
 var (

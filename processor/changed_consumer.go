@@ -5,7 +5,7 @@ import (
 )
 
 const (
-	CHANGED_CONSUMER_BUFFERED_SIZE = 100
+	CHANGED_CONSUMER_BUFFERED_SIZE = 100000
 )
 
 var (
@@ -70,6 +70,6 @@ func ProduceChanged(domain string, changed map[string]interface{}) {
 
 	for _, channels := range consumer {
 		channel := channels[util.RandomInt(len(channels))]
-		channel <- changed
+		channel <- util.CloneMap(changed)
 	}
 }

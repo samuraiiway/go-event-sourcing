@@ -5,7 +5,7 @@ import (
 )
 
 const (
-	PROJECTION_CHANNEL_SIZE = 1000
+	PROJECTION_CHANNEL_SIZE = 100000
 )
 
 var (

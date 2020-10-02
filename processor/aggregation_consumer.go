@@ -5,7 +5,7 @@ import (
 )
 
 const (
-	AGGREGATION_CONSUMER_BUFFERED_SIZE = 100
+	AGGREGATION_CONSUMER_BUFFERED_SIZE = 100000
 )
 
 var (
@@ -70,6 +70,6 @@ func ProduceAggregation(domain string, aggregation map[string]interface{}) {
 
 	for _, channels := range consumer {
 		channel := channels[util.RandomInt(len(channels))]
-		channel <- aggregation
+		channel <- util.CloneMap(aggregation)
 	}
 }

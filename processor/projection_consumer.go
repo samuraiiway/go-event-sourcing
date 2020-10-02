@@ -5,7 +5,7 @@ import (
 )
 
 const (
-	PROJECTION_CONSUMER_BUFFERED_SIZE = 100
+	PROJECTION_CONSUMER_BUFFERED_SIZE = 100000
 )
 
 var (
@@ -70,6 +70,6 @@ func ProduceProjection(domain string, projection map[string]interface{}) {
 
 	for _, channels := range consumer {
 		channel := channels[util.RandomInt(len(channels))]
-		channel <- projection
+		channel <- util.CloneMap(projection)
 	}
 }
