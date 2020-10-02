@@ -1,0 +1,32 @@
+{
+    "domain_name": "transaction",
+    "aggregated_id": "transaction_service_summary",
+    "group_by_key_id": ["service_id", "status"],
+    "aggregated_function": [
+        {
+            "property_name": "amount",
+            "field_name": "sum_amount",
+            "function": "sum"
+        },
+        {
+            "property_name": "amount",
+            "field_name": "min_amount",
+            "function": "min"
+        },
+        {
+            "property_name": "amount",
+            "field_name": "max_amount",
+            "function": "max"
+        },
+        {
+            "property_name": "amount",
+            "field_name": "count_amount",
+            "function": "count"
+        },
+        {
+            "property_name": "payer_id",
+            "field_name": "last_payer",
+            "function": "last"
+        }
+    ]
+}
